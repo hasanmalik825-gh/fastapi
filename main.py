@@ -21,10 +21,11 @@ async def index() -> dict:
 @app.post("/welcome")
 async def welcome_message(
     name: str = Query(..., description="Enter your name"),
+    surname: str = Query(..., description="Enter your surname")
 ) -> dict:
     
     return {
-        "message":f"Hello {name}"
+        "message":f"Hello {name} {surname}"
     }
 
 if __name__ == "__main__":
